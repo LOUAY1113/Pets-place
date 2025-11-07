@@ -1,25 +1,39 @@
 <nav class="navbar">
+  <!-- === LOGO === -->
   <div class="navbar-logo">
     <img src="assets/logo.png" alt="Pets Logo" />
   </div>
 
+  <!-- === SEARCH BAR === -->
   <div class="navbar-search">
     <i class="fa fa-search"></i>
     <input type="text" placeholder="search dog" />
     <button>Search</button>
   </div>
 
+  <!-- === NAVIGATION LINKS (Angular Router) === -->
   <ul class="navbar-links">
-    <li><a href="#" class="active">Home</a></li>
-    <li><a href="#">Accesoires</a></li>
-    <li><a href="#">Nourriture</a></li>
-    <li><a href="#">Contact us</a></li>
+    <li>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        Home
+      </a>
+    </li>
+    <li>
+      <a routerLink="/about" routerLinkActive="active">
+        About
+      </a>
+    </li>
+    <li>
+      <a routerLink="/contact" routerLinkActive="active">
+        Contact
+      </a>
+    </li>
   </ul>
 
+  <!-- === SHOP BUTTON === -->
   <div class="navbar-shop">
     <button class="shop-btn">
       Shop Now <i class="fa fa-shopping-cart"></i>
     </button>
   </div>
 </nav>
-
