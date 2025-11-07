@@ -1,39 +1,28 @@
 <nav class="navbar">
-  <!-- === LOGO === -->
-  <div class="navbar-logo">
-    <img src="assets/logo.png" alt="Pets Logo" />
-  </div>
+  <div class="navbar-container">
+    <div class="navbar-logo">
+      <img src="assets/logo.png" alt="Pets Logo" />
+    </div>
 
-  <!-- === SEARCH BAR === -->
-  <div class="navbar-search">
-    <i class="fa fa-search"></i>
-    <input type="text" placeholder="search dog" />
-    <button>Search</button>
-  </div>
+    <div class="navbar-search">
+      <i class="fa fa-search"></i>
+      <input type="text" placeholder="search dog" />
+      <button>Search</button>
+    </div>
 
-  <!-- === NAVIGATION LINKS (Angular Router) === -->
-  <ul class="navbar-links">
-    <li>
-      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-        Home
-      </a>
-    </li>
-    <li>
-      <a routerLink="/about" routerLinkActive="active">
-        About
-      </a>
-    </li>
-    <li>
-      <a routerLink="/contact" routerLinkActive="active">
-        Contact
-      </a>
-    </li>
-  </ul>
+    <ul class="navbar-links">
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
+      <li><a routerLink="/accessoires" routerLinkActive="active">Accesoires</a></li>
+      <li><a routerLink="/food" routerLinkActive="active">Nourriture</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active">Contact us</a></li>
+    </ul>
 
-  <!-- === SHOP BUTTON === -->
-  <div class="navbar-shop">
-    <button class="shop-btn">
-      Shop Now <i class="fa fa-shopping-cart"></i>
-    </button>
+    <div class="navbar-actions">
+      <div class="navbar-notification">
+        <i class="fa fa-bell"></i>
+        <span class="badge">2</span>
+      </div>
+      <button class="shop-btn">Shop Now <i class="fa fa-shopping-cart"></i></button>
+    </div>
   </div>
 </nav>
