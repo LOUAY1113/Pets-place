@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './Pages/home/home.component';
 import { AboutComponent } from './Pages/about/about.component';
 import { ContactComponent } from './Pages/contact/contact.component';
@@ -16,15 +18,17 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    HomeComponent,
-    AboutComponent,
-    ContactComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     CommonModule,
     RouterModule.forRoot(routes),
-    AppComponent
+    NavbarComponent,
+    FooterComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

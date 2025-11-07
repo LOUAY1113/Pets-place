@@ -1,10 +1,9 @@
 /* =========================================
    🧭 NAVBAR GLOBALE
 ========================================= */
-* {
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 .navbar {
@@ -17,6 +16,8 @@
   width: 100%;
   display: flex;
   justify-content: center; /* ✅ centre le contenu */
+  border: 2px solid black;
+  border-radius: 30px;
 }
 
 /* === Conteneur interne (même largeur que ta section home) === */
@@ -29,6 +30,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+  
 }
 
 /* === Logo === */
