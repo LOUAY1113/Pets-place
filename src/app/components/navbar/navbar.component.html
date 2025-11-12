@@ -1,28 +1,61 @@
 <nav class="navbar">
   <div class="navbar-container">
+    <!-- LOGO -->
     <div class="navbar-logo">
       <img src="assets/logo.png" alt="Pets Logo" />
+      <span class="site-name">Pets Place</span>
     </div>
 
-    <div class="navbar-search">
-      <i class="fa fa-search"></i>
-      <input type="text" placeholder="search dog" />
-      <button>Search</button>
-    </div>
+    <!-- MENU PRINCIPAL -->
+    <ul class="nav-links" [class.show]="isMenuOpen">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact Us</a></li>
 
-    <ul class="navbar-links">
-      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
-      <li><a routerLink="/accessoires" routerLinkActive="active">Accesoires</a></li>
-      <li><a routerLink="/food" routerLinkActive="active">Nourriture</a></li>
-      <li><a routerLink="/contact" routerLinkActive="active">Contact us</a></li>
+      <!-- Actions visibles sur mobile -->
+      <li class="mobile-actions">
+        <div class="search-box">
+          <input type="text" placeholder="Search Products" />
+          <button><i class="fa fa-search"></i></button>
+        </div>
+        <div class="icons">
+          <i class="fa-regular fa-user"></i>
+          <div class="icon-with-badge">
+            <i class="fa-regular fa-heart"></i>
+            <span class="badge">1</span>
+          </div>
+          <div class="icon-with-badge">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="badge">1</span>
+          </div>
+        </div>
+      </li>
     </ul>
 
-    <div class="navbar-actions">
-      <div class="navbar-notification">
-        <i class="fa fa-bell"></i>
-        <span class="badge">2</span>
+    <!-- ACTIONS desktop -->
+    <div class="nav-actions">
+      <div class="search-box">
+        <input type="text" placeholder="Search Products" />
+        <button><i class="fa fa-search"></i></button>
       </div>
-      <button class="shop-btn">Shop Now <i class="fa fa-shopping-cart"></i></button>
+
+      <div class="icons">
+        <i class="fa-regular fa-user"></i>
+        <div class="icon-with-badge">
+          <i class="fa-regular fa-heart"></i>
+          <span class="badge">1</span>
+        </div>
+        <div class="icon-with-badge">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="badge">1</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MENU BURGER -->
+    <div class="menu-toggle" (click)="toggleMenu()">
+      <i [class]="isMenuOpen ? 'fa fa-xmark' : 'fa fa-bars'"></i>
     </div>
   </div>
 </nav>

@@ -1,200 +1,260 @@
-/* =========================================
-   🧭 NAVBAR GLOBALE
-========================================= */
-body {
+/* === RESET === */
+@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@400..700&display=swap');
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .navbar {
-  font-family: "Poppins", sans-serif;
-  background-color: #fff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  background: #fff;
+  border-radius: 16px;
+  width: 92%;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 12px 2%;
+  border: 4px solid #000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   position: sticky;
-  top: 0;
-  z-index: 100;
-  width: 100%;
-  display: flex;
-  justify-content: center; /* ✅ centre le contenu */
-  border: 2px solid black;
-  border-radius: 30px;
+  top: 10px;
+  z-index: 1000;
 }
 
-/* === Conteneur interne (même largeur que ta section home) === */
+/* === CONTAINER === */
 .navbar-container {
-  width: 100%;
-  max-width: 1200px; /* ✅ même largeur que la section home */
-  margin: 0 auto;
-  padding: 16px 8%; /* ✅ même padding horizontal que .home */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  
+  flex-wrap: nowrap;
 }
 
-/* === Logo === */
-.navbar-logo img {
-  width: 58px;
-  height: 58px;
-  object-fit: contain;
-  border-radius: 50%;
-}
-
-/* === Barre de recherche === */
-.navbar-search {
+/* === LOGO === */
+.navbar-logo {
   display: flex;
   align-items: center;
-  background-color: #e6e6e6;
-  padding: 10px 12px;
-  border-radius: 8px;
-  flex: 1;
-  max-width: 380px;
-  margin: 0 40px;
-  gap: 8px;
+  gap: 10px;
 }
 
-.navbar-search i {
-  font-size: 18px;
+.navbar-logo img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  transition: transform 0.3s;
+}
+
+.navbar-logo img:hover {
+  transform: scale(1.05);
+}
+
+.navbar-logo .site-name {
+  font-size: 1.4rem;
+  font-weight: 700;
   color: #222;
 }
 
-.navbar-search input {
-  flex: 1;
-  border: none;
-  background: transparent;
-  outline: none;
-  font-size: 15px;
-  color: #000;
-}
-
-.navbar-search button {
-  background-color: #000;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  padding: 6px 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.navbar-search button:hover {
-  background-color: #333;
-}
-
-/* === Liens === */
-.navbar-links {
-  list-style: none;
+/* === LINKS === */
+.nav-links {
   display: flex;
+  gap: 28px;
+  list-style: none;
   align-items: center;
-  gap: 36px;
+  transition: all 0.4s ease;
 }
 
-.navbar-links a {
+.nav-links li a {
   text-decoration: none;
-  color: #000;
+  color: #222;
   font-weight: 500;
+  font-size: 0.95rem;
   position: relative;
-  font-size: 15px;
-  transition: color 0.3s;
 }
 
-.navbar-links a.active::after,
-.navbar-links a:hover::after {
+.nav-links li a.active,
+.nav-links li a:hover {
+  color: #f38b2a;
+}
+
+.nav-links li a.active::after {
   content: "";
   position: absolute;
   bottom: -4px;
   left: 0;
   width: 100%;
   height: 2px;
-  background: #000;
+  background: #f38b2a;
 }
 
-/* === Actions === */
-.navbar-actions {
+/* === SEARCH BOX === */
+.search-box {
   display: flex;
   align-items: center;
-  gap: 20px;
+  background: #ffffff;
+  border-radius: 25px;
+  padding: 6px 14px;
+  width: 230px;
+  border: 3px solid #000000;
+  transition: all 0.3s ease;
 }
 
-/* === Bouton Shop === */
-.shop-btn {
-  background: #000;
-  color: #fff;
+.search-box input {
+  flex: 1;
   border: none;
-  border-radius: 8px;
-  padding: 12px 22px;
-  font-weight: 500;
+  outline: none;
+  background: transparent;
+  font-size: 0.9rem;
+  font-family: "Alkatra", system-ui;
+  font-optical-sizing: auto;
+}
+
+.search-box button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.search-box:focus-within {
+  background: #fff;
+  border-color: #f38b2a;
+  box-shadow: 0 0 5px rgba(243, 139, 42, 0.3);
+}
+
+/* === ICONS === */
+.icons {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 18px;
+  margin-left: 12px;
+}
+
+.icons i {
+  font-size: 1.3rem;
+  color: #222;
   cursor: pointer;
-  transition: 0.3s;
+  transition: color 0.3s;
 }
 
-.shop-btn:hover {
-  background: #333;
+.icons i:hover {
+  color: #f38b2a;
 }
 
-/* === Notification === */
-.navbar-notification {
+.icon-with-badge {
   position: relative;
-  cursor: pointer;
-  transition: transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.navbar-notification i {
-  font-size: 22px;
-  color: #000;
-}
-
-.navbar-notification .badge {
+.icon-with-badge .badge {
   position: absolute;
-  top: -6px;
-  right: -8px;
-  background: #ff3b3b;
+  top: -5px;
+  right: -7px;
+  background: #f38b2a;
   color: #fff;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
-  padding: 2px 6px;
-  border-radius: 10px;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* === Tablet fix === */
-@media (max-width: 1100px) {
-  .navbar-container {
-    padding: 14px 6%;
-    gap: 16px;
+/* === NAV ACTIONS === */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* === BURGER === */
+.menu-toggle {
+  display: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #222;
+}
+
+/* === MOBILE === */
+.mobile-actions {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .nav-actions {
+    display: none;
   }
 
-  .navbar-search {
-    max-width: 300px;
-    margin: 0 20px;
+  .menu-toggle {
+    display: block;
   }
 
-  .navbar-links {
-    gap: 22px;
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 25px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 16px 16px;
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+    transition: all 0.3s ease;
   }
 
-  .navbar-links a {
-    font-size: 14px;
+  .nav-links.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
   }
 
-  .shop-btn {
-    padding: 10px 18px;
-    font-size: 14px;
+  .nav-links li {
+    padding: 10px 0;
+  }
+
+  .mobile-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    margin-top: 15px;
+  }
+
+  .mobile-actions .search-box {
+    width: 80%;
+  }
+
+  .mobile-actions .icons {
+    justify-content: center;
+    gap: 25px;
+  }
+}
+
+/* === EXTRA SMALL SCREENS === */
+@media (max-width: 480px) {
+  .navbar-logo .site-name {
+    font-size: 1.1rem;
   }
 
   .navbar-logo img {
-    width: 52px;
-    height: 52px;
+    width: 45px;
+    height: 45px;
   }
-}
 
-/* === Mobile === */
-@media (max-width: 768px) {
-  .navbar {
-    display: none;
+  .nav-links li a {
+    font-size: 1rem;
+  }
+
+  .menu-toggle {
+    font-size: 1.8rem;
+  }
+
+  .mobile-actions .icons {
+    gap: 20px;
   }
 }

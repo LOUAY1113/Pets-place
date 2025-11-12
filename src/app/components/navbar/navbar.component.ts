@@ -10,9 +10,15 @@ import { RouterModule } from '@angular/router';
   imports: [CommonModule, RouterModule]
 })
 export class NavbarComponent {
-  menuOpen = false;
+  isMenuOpen = false;
 
-  toggleMenu() {
-    this.menuOpen = !this.menuOpen;
+  // 🔁 Toggle menu open/close
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  // 🚪 Close menu when clicking a link (mobile UX)
+  closeMenu(): void {
+    this.isMenuOpen = false;
   }
 }

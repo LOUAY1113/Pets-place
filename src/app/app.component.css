@@ -1,3 +1,4 @@
+/* --- Reset global --- */
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +7,218 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  margin: 0;
-  padding: 0;
+}
+
+/* === Navbar principale === */
+.navbar {
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 1300px;
+  margin: 20px auto;
+  padding: 8px 2%;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+/* === Conteneur interne === */
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+/* === Logo === */
+/* === Logo === */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  img {
+    width: 60px;               /* ✅ largeur fixée */
+    height: 60px;              /* ✅ hauteur fixée */
+    object-fit: cover;         /* ✅ garde les proportions sans déformation */
+    border-radius: 50%;        /* ✅ rond parfait — change à 12px si tu veux juste arrondi */
+    border: 1px solid #000;    /* ✅ bordure fine et élégante */
+    overflow: hidden;          /* ✅ évite que l’image dépasse les bords */
+    background-color: #fff;    /* ✅ évite le fond transparent si image PNG */
+  }
+
+  .site-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #222;
+    white-space: nowrap;       /* ✅ empêche le texte de passer à la ligne */
+  }
+}
+
+
+
+/* === Liens du menu === */
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+
+  li a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+    position: relative;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+
+    &.active {
+      color: #f38b2a;
+    }
+
+    &.active::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #000;
+    }
+
+    &:hover {
+      color: #f38b2a;
+    }
+  }
+}
+
+/* === Recherche + icônes === */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* === Barre de recherche === */
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #f4f4f4;
+  border-radius: 30px;
+  padding: 6px 14px;
+  width: 260px;
+  border: 1px solid #e0e0e0;
+  transition: all 0.2s ease;
+
+  input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 0.9rem;
+  }
+
+  button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  &:focus-within {
+    background: #fff;
+    border-color: #f38b2a;
+    box-shadow: 0 0 5px rgba(243, 139, 42, 0.3);
+  }
+}
+
+/* === Icônes === */
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 1.2rem;
+  color: #222;
+
+  i {
+    cursor: pointer;
+    transition: color 0.3s;
+    &:hover {
+      color: #f38b2a;
+    }
+  }
+
+  .icon-with-badge {
+    position: relative;
+
+    .badge {
+      position: absolute;
+      top: -6px;
+      right: -8px;
+      background: #f38b2a;
+      color: #fff;
+      font-size: 9px;
+      font-weight: 600;
+      border-radius: 50%;
+      width: 14px;
+      height: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+/* === Responsive === */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Tablette (≤ 992px) */
+@media (max-width: 992px) {
+  .nav-links {
+    display: none;
+  }
+
+  .search-box {
+    width: 200px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* Mobile (≤ 600px) */
+@media (max-width: 600px) {
+  .navbar {
+    width: 95%;
+    padding: 8px 3%;
+  }
+
+  .navbar-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logo {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav-actions {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .search-box {
+    width: 90%;
+  }
+
+  .icons {
+    justify-content: center;
+    gap: 15px;
+  }
 }
