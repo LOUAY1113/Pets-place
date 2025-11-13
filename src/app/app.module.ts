@@ -9,6 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './Pages/home/home.component';
 import { AboutComponent } from './Pages/about/about.component';
 import { ContactComponent } from './Pages/contact/contact.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -26,9 +28,9 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     NavbarComponent,
     FooterComponent,
-    HomeComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+     HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

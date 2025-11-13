@@ -16,80 +16,47 @@
 
   <div class="hero-image">
     <img src="assets/dog.png" alt="Dog with paw prints" />
+    <img src="assets/bird.png" alt="Flying bird" class="bird" />
   </div>
 </section>
+
 
 <!-- ===== SECTION 1: HERO BANNER ===== -->
 <!-- ===== SECTION 2: CATEGORIES ===== -->
-<section class="categories">
-  <div class="categories-header">
-    <h2>Browse by category</h2>
-    <div class="arrows">
-      <button class="arrow-btn left">&#8592;</button>
-      <button class="arrow-btn right">&#8594;</button>
-    </div>
-  </div>
-
-  <div class="category-grid">
-    <div class="category-card">
-      <img src="assets/accesoires.jpg" alt="Accessoires" />
-      <div class="card-bottom">
-        <div class="text">
-          <h3>Accessoires</h3>
-          <p>57 produits</p>
-        </div>
-        <div class="arrow">
-          <img src="assets/arrow.png" alt="arrow icon" />
-        </div>
-      </div>
-    </div>
-
-    <div class="category-card">
-      <img src="assets/food.jpg" alt="Food" />
-      <div class="card-bottom">
-        <div class="text">
-          <h3>Food</h3>
-          <p>63 produits</p>
-        </div>
-        <div class="arrow">
-          <img src="assets/arrow.png" alt="arrow icon" />
-        </div>
-      </div>
-    </div>
-
-    <div class="category-card">
-      <img src="assets/arbrechat.jpg" alt="Arbre à chat" />
-      <div class="card-bottom">
-        <div class="text">
-          <h3>Arbre à chat</h3>
-          <p>24 produits</p>
-        </div>
-        <div class="arrow">
-          <img src="assets/arrow.png" alt="arrow icon" />
-        </div>
-      </div>
-    </div>
-
-    <div class="category-card">
-      <img src="assets/maisonchat.jpg" alt="Maison des animaux" />
-      <div class="card-bottom">
-        <div class="text">
-          <h3>Maison des animaux</h3>
-          <p>31 produits</p>
-        </div>
-        <div class="arrow">
-          <img src="assets/arrow.png" alt="arrow icon" />
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
 
 <section class="hero-banner">
   <img src="assets/hero.png" alt="Pet's Place banner" />
 </section>
+
+
+<section class="categories">
+  <div class="categories-header">
+    <h2>Browse by category</h2>
+    <div class="arrows">
+      <button class="arrow-btn left" (click)="scrollLeft()">&#8592;</button>
+      <button class="arrow-btn right" (click)="scrollRight()">&#8594;</button>
+    </div>
+  </div>
+
+<div class="category-grid" #categoryGrid>
+  <div class="category-card" *ngFor="let cat of categories">
+    <img [src]="cat.image" [alt]="cat.name" />
+    <div class="card-bottom">
+      <div class="text">
+        <h3>{{ cat.name }}</h3>
+        <p>{{ cat.count }} produits</p>
+      </div>
+      <div class="arrow">
+          <img src="assets/arrow.png" alt="arrow icon" />
+        </div>
+    </div>
+  </div>
+</div>
+
+</section>
+
+
+
 
 
 
