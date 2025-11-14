@@ -1,24 +1,29 @@
-<section class="hero-section">
-  <div class="hero-text">
-    <h1>Find your perfect<br><span>Food & accessoires</span></h1>
-    <p>
-      Welcome to our store dedicated to dog and cat lovers! We offer you a complete range of animal products and professional grooming services to pamper your companions, while taking care of their well-being and appearance.
-    </p>
-    <button class="btn-shop">Shop Now</button>
+<section class="hero-wrapper">
+  <div class="hero-section">
 
-    <div class="hero-items">
-      <img src="assets/1.png" alt="pet 1" />
-      <img src="assets/2.png" alt="pet 2" />
-      <img src="assets/3.png" alt="pet 3" />
-      <img src="assets/4.png" alt="pet 4" />
+    <div class="hero-text">
+      <h1>Find your perfect<br><span>Food & accessoires</span></h1>
+      <p>
+        Welcome to our store dedicated to dog and cat lovers! We offer you a complete range of animal products and professional grooming services to pamper your companions, while taking care of their well-being and appearance.
+      </p>
+      <button class="btn-shop">Shop Now</button>
+
+      <div class="hero-items">
+        <img src="assets/1.png" alt="pet 1" />
+        <img src="assets/2.png" alt="pet 2" />
+        <img src="assets/3.png" alt="pet 3" />
+        <img src="assets/4.png" alt="pet 4" />
+      </div>
     </div>
-  </div>
 
-  <div class="hero-image">
-    <img src="assets/dog.png" alt="Dog with paw prints" />
-    <img src="assets/bird.png" alt="Flying bird" class="bird" />
+    <div class="hero-image">
+      <img src="assets/dog.png" alt="Dog with paw prints" />
+      <img src="assets/bird.png" alt="Flying bird" class="bird" />
+    </div>
+
   </div>
 </section>
+
 
 
 <!-- ===== SECTION 1: HERO BANNER ===== -->
@@ -32,31 +37,70 @@
 <section class="categories">
   <div class="categories-header">
     <h2>Browse by category</h2>
+
     <div class="arrows">
       <button class="arrow-btn left" (click)="scrollLeft()">&#8592;</button>
       <button class="arrow-btn right" (click)="scrollRight()">&#8594;</button>
     </div>
   </div>
 
-<div class="category-grid" #categoryGrid>
-  <div class="category-card" *ngFor="let cat of categories">
-    <img [src]="cat.image" [alt]="cat.name" />
-    <div class="card-bottom">
-      <div class="text">
-        <h3>{{ cat.name }}</h3>
-        <p>{{ cat.count }} produits</p>
-      </div>
-      <div class="arrow">
+  <!-- GRID SCROLL AUTO ET MANUEL -->
+  <div class="category-grid"
+       #categoryGrid
+       (mouseenter)="stopAutoScroll()"
+       (mouseleave)="startAutoScroll()">
+
+    <div class="category-card" *ngFor="let cat of categories">
+      <img [src]="cat.image" [alt]="cat.name" />
+
+      <div class="card-bottom">
+        <div class="text">
+          <h3>{{ cat.name }}</h3>
+          <p>{{ cat.count }} produits</p>
+        </div>
+
+        <div class="arrow">
           <img src="assets/arrow.png" alt="arrow icon" />
         </div>
+      </div>
     </div>
   </div>
-</div>
-
 </section>
 
 
 
+
+
+<!-- ===== FEATURED PRODUCTS ===== -->
+<section class="featured-products">
+  <h2 class="section-title">Featured products</h2>
+
+  <div class="products-header">
+    <button class="nav-btn" (click)="prevProduct()">&#10094;</button>
+    <button class="nav-btn" (click)="nextProduct()">&#10095;</button>
+  </div>
+
+  <div class="products-grid" #productsGrid>
+    <div class="product-card" *ngFor="let p of featuredProducts">
+
+      <div class="img-wrapper">
+        <img [src]="p.image" [alt]="p.name" />
+        <button class="wishlist">
+          <i class="fa-regular fa-heart"></i>
+        </button>
+      </div>
+
+      <h3>{{ p.name }}</h3>
+
+      <p class="desc">{{ p.description }}</p>
+
+      <div class="bottom">
+        <span class="price">{{ p.price }} TND</span>
+        <button class="add-to-cart">Add to cart</button>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 
