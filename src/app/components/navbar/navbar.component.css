@@ -10,7 +10,7 @@
   background: #fff;
   border-radius: 16px;
   width: 92%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 20px auto;
   padding: 12px 2%;
   border: 4px solid #000;
@@ -211,6 +211,9 @@
     opacity: 1;
     transform: translateY(0);
     pointer-events: all;
+    border-radius: 16px;
+    border: 4px solid  black;
+    margin-top: 10px;
   }
 
   .nav-links li {

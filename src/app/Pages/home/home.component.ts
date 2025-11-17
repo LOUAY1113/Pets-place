@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { CategoryService, Category } from '../../services/category.service';
 import { ProductService, Product } from '../../services/product.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -13,20 +14,20 @@ export class HomeComponent implements OnInit, AfterViewInit {
         CATEGORIES
   ========================== */
   categories: Category[] = [];
-
   @ViewChild('categoryGrid') categoryGrid!: ElementRef;
 
   autoScrollInterval: any = null;
   restartTimer: any = null;
 
-
   /* =========================
       FEATURED PRODUCTS
   ========================== */
-  featuredProducts: Product[] = []; // maintenant dynamique depuis backend
+  featuredProducts: Product[] = [];
+  displayedProducts: Product[] = []; // cartes affichées
+  currentPage = 0;
+  cardsPerPage = 8;
 
-  @ViewChild('productsGrid') productsGrid!: ElementRef;
-
+  public backendUrl = environment.apiUrl;
 
   constructor(
     private categoryService: CategoryService,
@@ -34,17 +35,19 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ) {}
 
   ngOnInit(): void {
-
-    // Get categories from backend
+    // Get categories
     this.categoryService.getCategories().subscribe(
-      (data) => this.categories = data,
+      (data) => (this.categories = data),
       (error) => console.error('Erreur categories:', error)
     );
 
-    // Get products from backend
+    // Get featured products
     this.productService.getProducts().subscribe(
-      (data) => this.featuredProducts = data,
-      (error) => console.error('Erreur produits:', error)
+      (data) => {
+        this.featuredProducts = data;
+        this.updateDisplayedProducts();
+      },
+      (err) => console.error(err)
     );
   }
 
@@ -52,11 +55,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.startAutoScroll();
   }
 
+  /* =========================
+       IMAGE UTILITY
+  ========================== */
+  getImage(imageFile: string): string {
+    if (!imageFile) return "assets/default.png";
+    return `${this.backendUrl}/uploads/${imageFile}`;
+  }
 
-  /* ============================================================
-                CATEGORIES SLIDER (AUTO + MANUAL)
-  ============================================================ */
-
+  /* =========================
+       CATEGORIES SLIDER
+  ========================== */
   scrollLeft() {
     this.pauseAutoScrollTemporarily();
     this.categoryGrid.nativeElement.scrollBy({ left: -250, behavior: 'smooth' });
@@ -69,12 +78,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   startAutoScroll() {
     if (this.autoScrollInterval) return;
-
     this.autoScrollInterval = setInterval(() => {
       const grid = this.categoryGrid.nativeElement;
-
       grid.scrollBy({ left: 1.5 });
-
       if (grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 5) {
         grid.scrollTo({ left: 0 });
       }
@@ -90,27 +96,30 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   pauseAutoScrollTemporarily() {
     this.stopAutoScroll();
-
     if (this.restartTimer) clearTimeout(this.restartTimer);
-
-    this.restartTimer = setTimeout(() => {
-      this.startAutoScroll();
-    }, 2000);
+    this.restartTimer = setTimeout(() => this.startAutoScroll(), 2000);
   }
 
-
-  /* ============================================================
-                   FEATURED PRODUCTS SLIDER
-  ============================================================ */
+  /* =========================
+      FEATURED PRODUCTS PAGINATION
+  ========================== */
+  updateDisplayedProducts() {
+    const start = this.currentPage * this.cardsPerPage;
+    this.displayedProducts = this.featuredProducts.slice(start, start + this.cardsPerPage);
+  }
 
   nextProduct() {
-    if (this.productsGrid)
-      this.productsGrid.nativeElement.scrollBy({ left: 300, behavior: 'smooth' });
+    const maxPage = Math.floor((this.featuredProducts.length - 1) / this.cardsPerPage);
+    if (this.currentPage < maxPage) {
+      this.currentPage++;
+      this.updateDisplayedProducts();
+    }
   }
 
   prevProduct() {
-    if (this.productsGrid)
-      this.productsGrid.nativeElement.scrollBy({ left: -300, behavior: 'smooth' });
+    if (this.currentPage > 0) {
+      this.currentPage--;
+      this.updateDisplayedProducts();
+    }
   }
-
 }

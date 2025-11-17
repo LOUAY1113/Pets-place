@@ -49,7 +49,7 @@
 }
 
 .hero-text p {
-  margin-top: -22px;
+  margin-top: -12px;
   font-size: 1rem;
   color: #555;
   line-height: 1.6;
@@ -170,11 +170,12 @@
 
 @media (max-width: 600px) {
   .hero-section {
-    padding: 40px 5%;
+    padding: 0px 5%;
   }
 
   .hero-text h1 {
     font-size: 2rem;
+    
   }
 
   .btn-shop {
@@ -192,6 +193,11 @@
   .hero-image .bird {
     top: -10px;
     width: 80px;
+  }
+
+  .hero-text{
+    margin-left: 0;
+  
   }
 }
 
@@ -372,8 +378,8 @@
 ================================= */
 
 .featured-products {
-  width: 100%;
-  padding: 20px 4%;
+  width: 80%;
+  padding: 80px 10%;
   font-family: "Poppins", sans-serif;
 }
 
@@ -408,18 +414,24 @@
 }
 
 /* GRID EXACT LIKE THE PICTURE */
+.products-slider-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
 .products-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
   gap: 22px;
-  padding-bottom: 20px;
-  scroll-behavior: smooth;
 }
+
+
 
 /* PRODUCT CARD */
 .product-card {
   background: #fff;
-  border: 2px solid #dedede;
+  border: 3px solid #000000;
   border-radius: 12px;
   padding: 12px;
   transition: 0.2s ease-in-out;
@@ -429,7 +441,7 @@
 }
 
 .product-card:hover {
-  border-color: #007bff; /* blue border like in your screenshot */
+  border-color: #f38b2a; /* blue border like in your screenshot */
 }
 
 /* IMAGE PART */

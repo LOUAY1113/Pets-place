@@ -16,7 +16,7 @@ export interface Product {
 })
 export class ProductService {
 
-  private apiUrl = 'http://localhost:3000/api/products'; // URL backend
+  private apiUrl = 'http://localhost:3000/products'; // URL backend
 
   constructor(private http: HttpClient) {}
 

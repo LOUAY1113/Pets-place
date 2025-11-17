@@ -68,10 +68,6 @@
 </section>
 
 
-
-
-
-<!-- ===== FEATURED PRODUCTS ===== -->
 <section class="featured-products">
   <h2 class="section-title">Featured products</h2>
 
@@ -80,20 +76,13 @@
     <button class="nav-btn" (click)="nextProduct()">&#10095;</button>
   </div>
 
-  <div class="products-grid" #productsGrid>
-    <div class="product-card" *ngFor="let p of featuredProducts">
-
+  <div class="products-grid">
+    <div class="product-card" *ngFor="let p of displayedProducts">
       <div class="img-wrapper">
-        <img [src]="p.image" [alt]="p.name" />
-        <button class="wishlist">
-          <i class="fa-regular fa-heart"></i>
-        </button>
+         <img [src]="p.image" [alt]="p.name" />
       </div>
-
       <h3>{{ p.name }}</h3>
-
       <p class="desc">{{ p.description }}</p>
-
       <div class="bottom">
         <span class="price">{{ p.price }} TND</span>
         <button class="add-to-cart">Add to cart</button>
@@ -101,6 +90,10 @@
     </div>
   </div>
 </section>
+
+
+
+
 
 
 
