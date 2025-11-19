@@ -32,7 +32,7 @@
   flex: 1;
   max-width: 550px;
   z-index: 2;
-  margin-left: 120px;
+  margin-left: 126px
 }
 
 .hero-text h1 {
@@ -144,6 +144,7 @@
   /* ✅ Afficher le texte avant l'image sur mobile */
   .hero-text {
     order: 1;
+    margin-left: 0px;
   }
 
   .hero-image {
@@ -200,7 +201,23 @@
   
   }
 }
+@media (max-width: 1024px) {
+  .hero-text  {
+  margin-left: 26px;
 
+  }
+
+  .hero-image img {
+    max-width: 324px;
+    margin-top: -123px;
+  }
+  .hero-image .bird {
+    top: -85px;
+    left: -25%;
+    width: 308px;
+  }
+ 
+}
 /* ===== HERO BANNER ===== */
 .hero-banner {
   width: 100%;
@@ -214,8 +231,8 @@
 }
 
 .hero-banner img {
-  width: 1145px;
-  height: 324px;
+  width: 1274px;
+  height: 348px;
   max-height: 500px;
   object-fit: cover;
   border-radius: 30px;
@@ -226,8 +243,8 @@
 @media (max-width: 768px) {
 
  .hero-banner img{
-  width: 360px;
-    height: 100px;
+  width: 688px;
+    height: 194px;
     border-radius: 14px;
  }
 }
