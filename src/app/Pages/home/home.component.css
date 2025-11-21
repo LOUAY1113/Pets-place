@@ -57,7 +57,7 @@
 }
 
 .btn-shop {
-  margin-top: -6px;
+  margin-top: 3px;
   background: #000;
   color: #fff;
   border: none;
@@ -113,8 +113,8 @@
 .hero-image .bird {
   position: absolute;
   top: -70px;
-  left: -11%;
-  width: 240px;
+  left: 1%;
+  width: 340px;
   transform: translateX(-50%);
   animation: float 4s ease-in-out infinite;
   z-index: 3;
@@ -209,7 +209,7 @@
 
   .hero-image img {
     max-width: 324px;
-    margin-top: -123px;
+    margin-top: -25px;
   }
   .hero-image .bird {
     top: -85px;
@@ -218,6 +218,8 @@
   }
  
 }
+
+
 /* ===== HERO BANNER ===== */
 .hero-banner {
   width: 100%;
@@ -243,11 +245,30 @@
 @media (max-width: 768px) {
 
  .hero-banner img{
-  width: 688px;
-    height: 194px;
-    border-radius: 14px;
+  width: 500px;
+  height: 142px;
+  border-radius: 14px;
  }
+ .hero-image .bird { 
+  left: -102px;
+  top: 37px;
+  width: 222px;
+ }
+ .hero-text h1 {
+  font-size: 1.8rem;
+  margin-left: 0px;
+ }
+ .hero-text {
+  justify-content: center;}
+
 }
+
+@media (max-width: 500px) {
+  .hero-image .bird {
+    display: none !important;
+  }
+}
+
 
 
 /* ===== SECTION ===== */
