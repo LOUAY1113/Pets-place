@@ -289,6 +289,8 @@
   font-size: 1.8rem;
   font-weight: 700;
   color: #000;
+  font-family: "Alkatra", system-ui;
+  font-optical-sizing: auto;
 }
 
 /* ===== ARROWS ===== */
@@ -572,3 +574,373 @@
     grid-template-columns: repeat(1, 1fr);
   }
 }
+
+
+/* --------------------------
+   GLOBAL SECTION
+---------------------------*/
+/* ============================================
+   CONTAINER GLOBAL (centre toute la section)
+============================================ */
+.testimonial-section {
+  max-width: 1200px;        /* Largeur max sur PC */
+  margin: 0 auto;           /* Centre tout ! */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 4%;
+  gap: 220px;
+}
+
+/* --------------------------
+   LEFT SIDE (PC)
+---------------------------*/
+.testimonial-left {
+  flex: 1;
+  max-width: 500px;
+}
+
+.section-subtitle {
+  color: #ff7a00;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: left;
+  font-family: "Alkatra", system-ui;
+  font-optical-sizing: auto;
+}
+
+.stars {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.stars span {
+  font-size: 20px;
+  color: #ffb400;
+}
+
+.testimonial-text {
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.testimonial-user h4 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.testimonial-user span {
+  font-size: 13px;
+  color: #888;
+}
+
+.testimonial-nav {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.nav-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: #000;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: #ff7a00;
+}
+
+/* --------------------------
+   RIGHT SIDE
+---------------------------*/
+.testimonial-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image-wrapper {
+  width: 380px;
+  max-width: 100%;
+}
+
+.testimonial-photo {
+  width: 100%;
+  display: block;
+}
+
+/* --------------------------
+   TABLET RESPONSIVE
+---------------------------*/
+@media (max-width: 1024px) {
+  .testimonial-section {
+    flex-direction: column;
+    text-align: center;
+    max-width: 90%;         /* évite trop de largeur */
+  }
+
+  .section-title{
+    text-align: center;
+  }
+  .testimonial-left {
+    max-width: 600px;
+  }
+
+  .stars {
+    justify-content: center;
+  }
+
+  .testimonial-nav {
+    justify-content: center;
+  }
+
+  .image-wrapper {
+    width: 320px;
+  }
+}
+
+/* --------------------------
+   MOBILE RESPONSIVE
+---------------------------*/
+@media (max-width: 700px) {
+  .testimonial-section {
+    padding: 40px 4%;
+    max-width: 100%;
+  }
+
+  .section-title {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .testimonial-text {
+    font-size: 15px;
+  }
+
+  .image-wrapper {
+    width: 240px;
+  }
+}
+
+
+
+/* ------------------------------
+   CONTACT SECTION
+--------------------------------*/
+.contact-section {
+  padding: 80px 4%;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-container {
+  max-width: 1200px;
+  display: flex;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+/* ------------------------------
+   FORMULAIRE
+--------------------------------*/
+.contact-form {
+  width: 50%;
+  background: #fafafa;
+  padding: 30px 25px;
+  border-radius: 12px;
+  border: 4px solid black;
+  box-sizing: border-box;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Ligne avec deux inputs côte à côte */
+.form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; /* Permet de passer en colonne sur petit écran */
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full {
+  width: 100%; /* Prend toute la largeur si nécessaire */
+}
+
+label {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 3px solid black;
+  border-radius: 6px;
+  font-size: 14px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+textarea {
+  height: 120px;
+  resize: none;
+}
+
+.send-btn {
+  width: 150px;
+  padding: 12px 0;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+  align-self: flex-start;
+}
+
+.send-btn:hover {
+  background: #ff7a00;
+}
+
+/* ------------------------------
+   CONTACT INFO
+--------------------------------*/
+.contact-info {
+  width: 50%;
+}
+
+.contact-info h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  color: #555;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+.icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.contact-info h2 {
+    font-size: 28px;
+    font-family: "Alkatra", system-ui;
+    font-optical-sizing: auto;
+  }
+
+/* ------------------------------
+   RESPONSIVE TABLETTE
+--------------------------------*/
+@media (max-width: 1024px) {
+  .contact-section {
+    padding: 60px 4%;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    gap: 40px; /* Réduit l’espace entre form et info */
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-form,
+  .contact-info {
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .form-row {
+    flex-direction: column; /* Inputs en colonne */
+    gap: 15px;
+  }
+
+  .send-btn {
+    align-self: center; /* Centrer le bouton */
+  }
+
+  .contact-info li {
+    justify-content: center;
+  }
+  label{
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    text-align: left;
+  }
+}
+
+/* ------------------------------
+   RESPONSIVE MOBILE
+--------------------------------*/
+@media (max-width: 600px) {
+  .contact-section {
+    padding: 40px 4%;
+  }
+
+  .contact-form {
+    padding: 25px 20px; /* Ajuste padding pour petit écran */
+  }
+
+  .contact-info h2 {
+    font-size: 26px;
+  }
+
+  .send-btn {
+    width: 100%; /* Bouton prend toute la largeur */
+  }
+
+  .form-row {
+    gap: 10px;
+  }
+   label{
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    text-align: left;
+  }
+}
+
+

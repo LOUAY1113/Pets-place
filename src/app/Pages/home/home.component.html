@@ -37,49 +37,49 @@
 <section class="categories">
   <div class="categories-header">
     <h2>Browse by category</h2>
-
+    
     <div class="arrows">
       <button class="arrow-btn left" (click)="scrollLeft()">&#8592;</button>
       <button class="arrow-btn right" (click)="scrollRight()">&#8594;</button>
     </div>
   </div>
-
+  
   <!-- GRID SCROLL AUTO ET MANUEL -->
   <div class="category-grid"
-       #categoryGrid
-       (mouseenter)="stopAutoScroll()"
-       (mouseleave)="startAutoScroll()">
-
-    <div class="category-card" *ngFor="let cat of categories">
-      <img [src]="cat.image" [alt]="cat.name" />
-
-      <div class="card-bottom">
-        <div class="text">
-          <h3>{{ cat.name }}</h3>
-          <p>{{ cat.count }} produits</p>
-        </div>
-
-        <div class="arrow">
-          <img src="assets/arrow.png" alt="arrow icon" />
-        </div>
+  #categoryGrid
+  (mouseenter)="stopAutoScroll()"
+  (mouseleave)="startAutoScroll()">
+  
+  <div class="category-card" *ngFor="let cat of categories">
+    <img [src]="cat.image" [alt]="cat.name" />
+    
+    <div class="card-bottom">
+      <div class="text">
+        <h3>{{ cat.name }}</h3>
+        <p>{{ cat.count }} produits</p>
+      </div>
+      
+      <div class="arrow">
+        <img src="assets/arrow.png" alt="arrow icon" />
       </div>
     </div>
   </div>
+</div>
 </section>
 
 
 <section class="featured-products">
   <h2 class="section-title">Featured products</h2>
-
+  
   <div class="products-header">
     <button class="nav-btn" (click)="prevProduct()">&#10094;</button>
     <button class="nav-btn" (click)="nextProduct()">&#10095;</button>
   </div>
-
+  
   <div class="products-grid">
     <div class="product-card" *ngFor="let p of displayedProducts">
       <div class="img-wrapper">
-         <img [src]="p.image" [alt]="p.name" />
+        <img [src]="p.image" [alt]="p.name" />
       </div>
       <h3>{{ p.name }}</h3>
       <p class="desc">{{ p.description }}</p>
@@ -91,6 +91,92 @@
   </div>
 </section>
 
+<section class="testimonial-section">
+  <div class="testimonial-left">
+    <p class="section-subtitle">Testimonials</p>
+    <h2 class="section-title">What people say about us</h2>
+    
+    <div class="stars">
+      <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+    </div>
+    
+    <p class="testimonial-text">
+      Morbi viverra eleifend in cras orci a leo tellus. Nunc purus adipiscing diam aliquet lorem nunc. 
+      Ipsum euismod risus amet eget non. Pulvinar condimentum ultricies tellus a non pellentesque odio 
+      pellentesque blandit.
+    </p>
+    
+    <div class="testimonial-user">
+      <h4>Gerald Ferguson</h4>
+      <span>Customer</span>
+    </div>
+    
+    <div class="testimonial-nav">
+      <button class="nav-btn">❮</button>
+      <button class="nav-btn">❯</button>
+    </div>
+  </div>
+  
+  <div class="testimonial-right">
+    <div class="image-wrapper">
+      <img class="testimonial-photo" src="assets/testimonial.png" alt="testimonial" />
+    </div>
+  </div>
+</section>
+
+
+
+<section class="contact-section">
+  <div class="contact-container">
+    
+    <!-- FORMULAIRE -->
+    <div class="contact-form">
+      <form>
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="First name">
+          </div>
+          
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Last name">
+          </div>
+        </div>
+        
+        <div class="form-group full">
+          <label>Email Address</label>
+          <input type="email" placeholder="E-mail address">
+        </div>
+        
+        <div class="form-group full">
+          <label>Message</label>
+          <textarea placeholder="Your message.."></textarea>
+        </div>
+        
+        <button class="send-btn">Send Message</button>
+      </form>
+    </div>
+    
+    <!-- TEXTE + CONTACT INFOS -->
+    <div class="contact-info">
+      <h2>Feel free to contact us</h2>
+      <p>
+        At et vehicula sodales est porta turpis pellentesque sit nulla aliquam amet 
+        honcus quisque eget sit. Sociis blandit et pellentesque aliquet at quisque 
+        tortor lacinia nullam.
+      </p>
+      
+      <ul>
+        <li><span class="icon">📍</span> Rue el Ouard, Zaghouan</li>
+        <li><span class="icon">📧</span> petsplacegmail.com</li>
+        <li><span class="icon">📞</span> +775 378-6348</li>
+        <li><span class="icon">⏱️</span> Monday – Friday: 10AM – 10PM</li>
+      </ul>
+    </div>
+    
+  </div>
+</section>
 
 
 
