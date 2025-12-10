@@ -1,0 +1,211 @@
+footer.footer {
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 180px;
+  padding: 60px 7% 20px;
+  color: #ffffff;
+  position: relative;
+  
+}
+
+/* opacité sur le fond */
+footer.footer::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:#000000;
+  
+  pointer-events:none;
+  border-radius: 20px;
+}
+
+/* tout le reste inchangé */
+
+
+.footer-content {
+  position:relative;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:40px;
+  z-index:2;
+
+  /* 🔥 Centre tout parfaitement */
+  justify-items: center;
+  text-align:center; /* pour centrer les textes aussi */
+}
+
+
+.footer-box h3 {
+  font-weight:700;
+  margin-bottom:15px;
+}
+
+.footer-box p {
+  color:#ffffff;
+  line-height:1.6;
+}
+
+.footer-box ul {
+  list-style:none;
+  padding:0;
+}
+
+.footer-box ul li {
+  margin:8px 0;
+}
+
+.footer-box ul li a {
+  text-decoration:none;
+  color:#ffffff;
+  font-weight:500;
+  transition:.3s;
+}
+
+.footer-box ul li a:hover {
+  color:#e1306c; /* couleur instagram, tu peux changer */
+}
+
+.social-area {
+  text-align:center;
+  margin:25px 0 10px;
+  position:relative;
+  z-index:2;
+}
+
+.icon {
+  display:inline-flex;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  align-items:center;
+  justify-content:center;
+  border:2px solid #ffffff;
+  margin:0 7px;
+  font-size:18px;
+  color:#ffffff;
+  transition:.3s;
+}
+
+.icon:hover {
+  background:#ffffff; /* Fond blanc au hover */
+  color:#000000;      /* Icône devient noire */
+  border-color:#ffffff;
+  transform: scale(1.12); /* Petit zoom smooth, optionnel mais très beau */
+}
+
+
+.copy {
+  text-align:center;
+  margin-top:10px;
+  font-size:14px;
+  opacity:.7;
+  z-index:2;
+  position:relative;
+}
+
+
+/* 📱 TABLETTE - max 992px */
+@media (max-width: 992px) {
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  footer.footer {
+    background-size: 140px;   /* image un peu plus petite */
+    padding: 50px 5% 25px;
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer-box h3 {
+    font-size: 18px;
+  }
+
+  .footer-box p,
+  .footer-box ul li a {
+    font-size: 15px;
+  }
+
+  .icon {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+    margin: 0 5px;
+  }
+}
+
+/* 📱 MOBILE - max 600px */
+@media (max-width: 600px) {
+  footer.footer {
+    padding: 40px 5% 20px;
+    background-size: 120px; /* réduire les pattes pour mobile */
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr; /* une seule colonne */
+    gap: 25px;
+  }
+
+  .footer-box p {
+    font-size: 14px;
+  }
+
+  .footer-box ul li {
+    margin: 6px 0;
+  }
+
+  .icon {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+    margin: 0 5px;
+  }
+
+  .copy {
+    font-size: 12px;
+    margin-top: 15px;
+  }
+}
+
+/* ===========================
+   📌 MOBILE (≤ 425px)
+=========================== */
+@media (max-width: 425px) {
+  footer.footer {
+    background-size: 110px;
+    padding: 40px 6% 20px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr; /* tout en colonne */
+    gap: 25px;
+  }
+
+  .footer-box h3 {
+    font-size: 17px;
+  }
+
+  .footer-box p,
+  .footer-box ul li a {
+    font-size: 14px;
+  }
+
+  .icon {
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+    margin: 0 4px;
+  }
+
+  .copy {
+    font-size: 12px;
+  }
+}

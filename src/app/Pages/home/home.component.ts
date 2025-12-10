@@ -1,10 +1,14 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { CommonModule } from '@angular/common';       //  <-- nécessaire pour *ngFor / *ngIf
+import { RouterModule } from '@angular/router';       //  <-- nécessaire pour routerLink
 import { CategoryService, Category } from '../../services/category.service';
 import { ProductService, Product } from '../../services/product.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home',
+  standalone: true,
+  imports: [CommonModule],   // <-- ajout obligatoire pour Home standalone
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })

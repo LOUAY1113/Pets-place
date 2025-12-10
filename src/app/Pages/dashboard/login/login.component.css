@@ -1,0 +1,291 @@
+/* =========================================
+   GLOBAL RESET
+========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+/* =========================================
+   MAIN PAGE LAYOUT
+========================================= */
+.login-page {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* =========================================
+   LEFT SIDE (IMAGE)
+========================================= */
+.left-side {
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+
+.left-side img {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+  border-radius: 25px;
+  max-width: 850px;
+}
+
+/* =========================================
+   RIGHT SIDE (FORM + LOGO)
+========================================= */
+.right-side {
+  width: 45%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 120px; /* espace sous le top bar */
+}
+
+/* =========================================
+   TOP BAR (LOGO + SIGN UP)
+========================================= */
+.top-actions {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  width: 100%;
+  padding: 0 40px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO STYLE */
+.logo-box img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #000;
+  padding: 12px;
+}
+
+/* SIGN UP LINK */
+.signup-link {
+  font-size: 1.15rem;
+  color: #000;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* =========================================
+   LOGIN CARD
+========================================= */
+.form-box {
+  width: 660px;
+  height: auto;
+  padding: 40px 35px;
+  border-radius: 18px;
+  border: 4px solid #000000;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+/* Titles */
+h1 {
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.title {
+  margin-top: 18px;
+  margin-bottom: 15px;
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+/* =========================================
+   INPUTS
+========================================= */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.input-group label {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  padding: 11px 12px;
+  font-size: 1rem;
+  border: 1px solid #000;
+  border-radius: 6px;
+}
+
+/* Password toggle */
+.password {
+  position: relative;
+}
+
+.password .toggle {
+  position: absolute;
+  right: 12px;
+  top: 40px;
+  cursor: pointer;
+  font-size: 1.15rem;
+}
+
+/* Button */
+.login-btn {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 12px 0;
+  border-radius: 50px;
+  margin-top: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+/* Links & texts */
+.forgot {
+  margin-top: 12px;
+  display: block;
+  color: red;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.account {
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.login-link {
+  font-weight: 600;
+  color: #000;
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.divider span {
+  flex: 1;
+  height: 1px;
+  background: #ccc;
+}
+
+.divider p {
+  margin: 0 10px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Social icons */
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.socials img {
+  width: 35px;
+  cursor: pointer;
+}
+
+/* =========================================
+   RESPONSIVE – TABLETTE
+========================================= */
+@media (max-width: 1100px) {
+  .left-side img {
+    max-width: 650px;
+    height: 80vh;
+  }
+
+  .form-box {
+    width: 480px;
+  }
+
+  .logo-box img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE – TABLETTE PORTRAIT
+========================================= */
+@media (max-width: 900px) {
+  .login-page {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left-side {
+    width: 100%;
+    padding: 0;
+  }
+
+  .left-side img {
+    width: 100%;
+    height: 300px;
+    border-radius: 0;
+  }
+
+  .right-side {
+    width: 100%;
+    padding-top: 160px; 
+  }
+
+  .form-box {
+    width: 90%;
+  }
+}
+
+/* =========================================
+   RESPONSIVE – MOBILE
+========================================= */
+@media (max-width: 600px) {
+  .form-box {
+    width: 90%;
+    padding: 25px 20px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .signup-link {
+    font-size: 1rem;
+  }
+}
