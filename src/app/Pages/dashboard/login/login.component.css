@@ -29,7 +29,7 @@ body, html {
    LEFT SIDE (IMAGE)
 ========================================= */
 .left-side {
-  width: 55%;
+  width: 45%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,10 +37,10 @@ body, html {
 }
 
 .left-side img {
-  width: 100%;
-  height: 90vh;
+  width: 680px;
+  height: 636px;
   object-fit: cover;
-  border-radius: 25px;
+  border-radius: 20px;
   max-width: 850px;
 }
 
@@ -48,12 +48,12 @@ body, html {
    RIGHT SIDE (FORM + LOGO)
 ========================================= */
 .right-side {
-  width: 45%;
+  width: 55%;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 120px; /* espace sous le top bar */
+  padding-top: 120px;
 }
 
 /* =========================================
@@ -61,14 +61,15 @@ body, html {
 ========================================= */
 .top-actions {
   position: absolute;
-  top: 25px;
+  top: 4px;
   left: 0;
   width: 100%;
-  padding: 0 40px;
+  padding: 0 57px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
 }
 
 /* LOGO STYLE */
@@ -78,7 +79,8 @@ body, html {
   object-fit: contain;
   border-radius: 50%;
   background: #000;
-  padding: 12px;
+  padding: -11px;
+  
 }
 
 /* SIGN UP LINK */
@@ -90,16 +92,26 @@ body, html {
 }
 
 /* =========================================
-   LOGIN CARD
+   LOGIN CARD (FORMULAIRE FIXÉ 552x500)
 ========================================= */
 .form-box {
-  width: 660px;
-  height: auto;
-  padding: 40px 35px;
+  width: 740px;
+  height: 580px;
+  padding: 16px 35px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* équilibre parfait */
+  align-items: center;
+  gap: 10px;
+
   border-radius: 18px;
   border: 4px solid #000000;
   box-shadow: 0 4px 15px rgba(0,0,0,0.05);
   text-align: center;
+  background: #fff;
+  overflow: hidden;
+  margin-top: -35px;
 }
 
 /* Titles */
@@ -109,26 +121,30 @@ h1 {
 }
 
 .subtitle {
-  margin-top: 10px;
   font-size: 0.95rem;
   color: #444;
 }
 
 .title {
-  margin-top: 18px;
-  margin-bottom: 15px;
   font-size: 1.35rem;
   font-weight: 600;
+}
+
+/* Optimisation spacing */
+.form-box h1,
+.form-box .subtitle,
+.form-box .title {
+  margin-bottom: 5px;
 }
 
 /* =========================================
    INPUTS
 ========================================= */
 .input-group {
+  width: 100%;
   display: flex;
   flex-direction: column;
   text-align: left;
-  margin-bottom: 12px;
 }
 
 .input-group label {
@@ -154,6 +170,7 @@ h1 {
   top: 40px;
   cursor: pointer;
   font-size: 1.15rem;
+  margin-top: -11px;
 }
 
 /* Button */
@@ -164,14 +181,13 @@ h1 {
   font-size: 1.1rem;
   padding: 12px 0;
   border-radius: 50px;
-  margin-top: 10px;
   cursor: pointer;
   border: none;
 }
 
 /* Links & texts */
 .forgot {
-  margin-top: 12px;
+  margin-top: 5px;
   display: block;
   color: red;
   font-size: 0.9rem;
@@ -179,7 +195,6 @@ h1 {
 }
 
 .account {
-  margin-top: 15px;
   font-size: 0.9rem;
 }
 
@@ -192,7 +207,7 @@ h1 {
 .divider {
   display: flex;
   align-items: center;
-  margin: 15px 0;
+  margin: 8px 0;
 }
 
 .divider span {
@@ -212,6 +227,7 @@ h1 {
   display: flex;
   justify-content: center;
   gap: 20px;
+  margin-bottom: 5px;
 }
 
 .socials img {
@@ -226,10 +242,6 @@ h1 {
   .left-side img {
     max-width: 650px;
     height: 80vh;
-  }
-
-  .form-box {
-    width: 480px;
   }
 
   .logo-box img {
@@ -260,11 +272,7 @@ h1 {
 
   .right-side {
     width: 100%;
-    padding-top: 160px; 
-  }
-
-  .form-box {
-    width: 90%;
+    padding-top: 160px;
   }
 }
 
@@ -272,9 +280,10 @@ h1 {
    RESPONSIVE – MOBILE
 ========================================= */
 @media (max-width: 600px) {
-  .form-box {
-    width: 90%;
-    padding: 25px 20px;
+  .right-side {
+    padding-top: 200px;
+    display: flex;
+    justify-content: center;
   }
 
   h1 {
