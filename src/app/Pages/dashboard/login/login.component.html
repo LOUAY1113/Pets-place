@@ -1,65 +1,53 @@
 <div class="login-page">
-    
-    <!-- ========== LEFT SIDE (IMAGE) ========== -->
-    <div class="left-side">
-        <img src="assets/login.png" alt="pet login image" />
+
+  <!-- TOP BAR -->
+  <div class="top-actions">
+    <div class="logo-box">
+      <img src="assets/logo.png" alt="Pet's Logo" />
     </div>
-    
-    <!-- ========== RIGHT SIDE (LOGO + SIGNUP + FORM) ========== -->
-    <div class="right-side">
-        
-        <!-- Top bar -->
-        <div class="top-actions">
-            <div class="logo-box">
-                <img src="assets/logo.png" alt="Pet's Place logo" />
-            </div>
+    <a routerLink="/dashboard/signup" class="signup-link">Sign up</a>
+  </div>
 
-            <a routerLink="/dashboard/signup" class="signup-link">Sign up</a>
-        </div>
+  <!-- LOGIN CARD -->
+  <div class="form-box">
 
-        <!-- FORM -->
-        <div class="form-box">
+    <h1>Welcome Back!</h1>
 
-            <h1>Welcome Back! <br>To <br> Pet's Place</h1>
+    <p class="subtitle">
+      Please enter your information below <br />
+      and get started
+    </p>
 
-            <p class="subtitle">Please enter your information below<br>and get started</p>
+    <h2 class="title">Login into dashboard</h2>
 
-            <h2 class="title">Login into dashboard</h2>
-
-            <div class="input-group">
-                <label>Email</label>
-                <input type="email" placeholder="Email" />
-            </div>
-
-            <div class="input-group password">
-                <label>Password</label>
-                <input [type]="showPassword ? 'text' : 'password'" placeholder="Password" />
-                <span class="toggle" (click)="togglePassword()">
-                    {{ showPassword ? '🙈' : '👁️' }}
-                </span>
-            </div>
-
-            <button class="login-btn">Log in</button>
-
-            <a class="forgot" href="#">Forget your password ?</a>
-
-            <p class="account">Don't have an account? 
-                <a class="login-link" routerLink="/dashboard/signup">Sign up</a>
-            </p>
-
-            <div class="divider">
-                <span></span>
-                <p>or sign in using</p>
-                <span></span>
-            </div>
-
-            <div class="socials">
-                <img src="assets/google.png" alt="google" />
-                <img src="assets/facebook.png" alt="facebook" />
-            </div>
-
-        </div>
-
+    <div class="input-group">
+      <input type="email" placeholder="Email" />
     </div>
 
+    <div class="input-group password">
+      <input type="password" placeholder="Password" />
+      <span class="toggle">👁</span>
+    </div>
+
+    <button class="login-btn">Log in</button>
+
+    <a class="forgot">Forget your password ?</a>
+
+    <p class="account">
+      Already have account?
+      <a routerLink="/dashboard/signup">Log in</a>
+    </p>
+
+    <div class="divider">
+      <span></span>
+      <p>or sign in using</p>
+      <span></span>
+    </div>
+
+    <div class="socials">
+      <img src="assets/google.png" />
+      <img src="assets/facebook.png" />
+    </div>
+
+  </div>
 </div>
